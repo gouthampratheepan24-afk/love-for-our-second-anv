@@ -115,15 +115,12 @@ button:hover{
 
 <body>
 
-<!-- Original Watermarks -->
 <div class="watermark" style="top:15%;">Love You My Kundniiiii ❤️</div>
 <div class="watermark" style="top:55%;">Love You Sellameye ❤️</div>
 
 <div class="container">
   <h1>Happy 2 Years ❤️</h1>
-
   <div id="text"></div>
-
   <button id="foreverBtn" onclick="celebrate()">
     Forever With You 💍
   </button>
@@ -132,7 +129,7 @@ button:hover{
 <script>
 
 /* MANY LOVE BACKGROUND TEXTS */
-for(let i=0;i<12;i++){
+for(let i=0;i<15;i++){
   const bg=document.createElement("div");
   bg.classList.add("bgLove");
   bg.innerHTML="Love You Sellam ❤️";
@@ -141,7 +138,7 @@ for(let i=0;i<12;i++){
   document.body.appendChild(bg);
 }
 
-/* TYPEWRITER MESSAGE WITH YOUR DIALOGUES */
+/* TYPEWRITER MESSAGE */
 const message = `Happy 2 Year Anniversary, my Sellam ❤️
 
 From January 19, 2024...
@@ -182,11 +179,6 @@ function typeWriter() {
 
 typeWriter();
 
-function celebrate(){
-  document.body.style.background="black";
-  alert("Forever. Only You ❤️");
-}
-
 /* Floating hearts */
 function createHeart(){
   const heart=document.createElement("div");
@@ -197,6 +189,64 @@ function createHeart(){
   setTimeout(()=>{heart.remove();},7000);
 }
 setInterval(createHeart,600);
+
+/* CINEMATIC ENDING */
+function celebrate(){
+
+  const fade=document.createElement("div");
+  fade.style.position="fixed";
+  fade.style.top="0";
+  fade.style.left="0";
+  fade.style.width="100%";
+  fade.style.height="100%";
+  fade.style.background="black";
+  fade.style.opacity="0";
+  fade.style.transition="3s";
+  fade.style.zIndex="9999";
+  document.body.appendChild(fade);
+
+  setTimeout(()=>{ fade.style.opacity="1"; },100);
+
+  for(let i=0;i<150;i++){
+    const spark=document.createElement("div");
+    spark.innerHTML="❤️";
+    spark.style.position="fixed";
+    spark.style.left="50%";
+    spark.style.top="50%";
+    spark.style.fontSize="20px";
+    spark.style.transform=`translate(-50%,-50%)`;
+    spark.style.transition="2s ease-out";
+    document.body.appendChild(spark);
+
+    const x=(Math.random()-0.5)*800;
+    const y=(Math.random()-0.5)*600;
+
+    setTimeout(()=>{
+      spark.style.transform=`translate(${x}px,${y}px)`;
+      spark.style.opacity="0";
+    },50);
+
+    setTimeout(()=>{ spark.remove(); },2000);
+  }
+
+  setTimeout(()=>{
+    fade.innerHTML=`
+      <div style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100%;
+        text-align:center;
+        font-family:'Great Vibes',cursive;
+        font-size:70px;
+        color:#ff4d6d;
+        text-shadow:0 0 50px #ff4d6d;">
+        Happy 2 Years My Sellam ❤️<br><br>
+        Forever. Only You.
+      </div>
+    `;
+  },3000);
+}
 
 </script>
 
