@@ -1,119 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>The Beginning ❤️</title>
+<title>Memory One</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
 <style>
-body{
-  margin:0;
-  background:black;
-  color:white;
-  font-family:'Poppins',sans-serif;
-  overflow:hidden;
-}
-
-.container{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  animation:fadeIn 2s ease-in-out;
-}
-
-h1{
-  font-family:'Great Vibes',cursive;
-  font-size:80px;
-  color:#ff4d6d;
-  text-shadow:0 0 40px #ff4d6d;
-  animation:zoom 3s ease-in-out;
-}
-
-p{
-  font-size:24px;
-  line-height:1.8;
-  margin-top:30px;
-  max-width:80%;
-  animation:fadeText 3s ease-in-out;
-}
-
-button{
-  margin-top:50px;
-  padding:18px 55px;
-  font-size:20px;
-  border:none;
-  border-radius:40px;
-  background:#ff4d6d;
-  color:white;
-  cursor:pointer;
-  box-shadow:0 0 25px #ff4d6d;
-  transition:0.4s;
-}
-
-button:hover{
-  transform:scale(1.15);
-  box-shadow:0 0 50px #ff4d6d;
-}
-
-/* Animations */
-@keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
-}
-
-@keyframes zoom{
-  from{transform:scale(0.8);}
-  to{transform:scale(1);}
-}
-
-@keyframes fadeText{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-/* Stars */
-.star{
-  position:fixed;
-  width:2px;
-  height:2px;
-  background:white;
-  animation:twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle{
-  from{opacity:0.2;}
-  to{opacity:1;}
-}
+body{margin:0;background:black;color:white;font-family:'Poppins';display:flex;justify-content:center;align-items:center;height:100vh;text-align:center;}
+h1{font-family:'Great Vibes';font-size:70px;color:#ff4d6d;text-shadow:0 0 25px #ff4d6d;}
+p{font-size:22px;line-height:1.7;}
+button{margin-top:40px;padding:15px 40px;border:none;border-radius:40px;background:#ff4d6d;color:white;font-size:18px;cursor:pointer;}
 </style>
 </head>
-
 <body>
-
-<div class="container">
-  <h1>Do You Remember? ❤️</h1>
-
-  <p>
-    The very first time we started talking…<br><br>
-    What felt small that day…<br>
-    Became everything today.
-  </p>
-
-  <button onclick="location.href='page3.html'">
-    There’s More…
-  </button>
+<div>
+<h1>Two Years Ago ❤️</h1>
+<p>From strangers...<br>To best friends...<br>To soulmates.</p>
+<button onclick="location.href='page3.html'">Continue</button>
 </div>
-
-<script>
-for(let i=0;i<100;i++){
-  const star=document.createElement("div");
-  star.classList.add("star");
-  star.style.left=Math.random()*100+"vw";
-  star.style.top=Math.random()*100+"vh";
-  document.body.appendChild(star);
-}
-</script>
-
 </body>
 </html>
