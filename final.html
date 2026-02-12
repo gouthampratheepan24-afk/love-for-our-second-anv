@@ -31,7 +31,7 @@ body{
   100%{transform:translateX(100%);}
 }
 
-/* MANY BACKGROUND LOVE TEXTS */
+/* BACKGROUND LOVE TEXTS */
 .bgLove{
   position:fixed;
   font-family:'Great Vibes', cursive;
@@ -128,7 +128,7 @@ button:hover{
 
 <script>
 
-/* MANY LOVE BACKGROUND TEXTS */
+/* BACKGROUND LOVE TEXTS */
 for(let i=0;i<15;i++){
   const bg=document.createElement("div");
   bg.classList.add("bgLove");
@@ -190,7 +190,7 @@ function createHeart(){
 }
 setInterval(createHeart,600);
 
-/* CINEMATIC ENDING */
+/* UPDATED CINEMATIC ENDING WITH REDIRECT */
 function celebrate(){
 
   const fade=document.createElement("div");
@@ -207,19 +207,21 @@ function celebrate(){
 
   setTimeout(()=>{ fade.style.opacity="1"; },100);
 
-  for(let i=0;i<150;i++){
+  // Heart explosion
+  for(let i=0;i<120;i++){
     const spark=document.createElement("div");
     spark.innerHTML="❤️";
     spark.style.position="fixed";
     spark.style.left="50%";
     spark.style.top="50%";
     spark.style.fontSize="20px";
-    spark.style.transform=`translate(-50%,-50%)`;
+    spark.style.transform="translate(-50%,-50%)";
     spark.style.transition="2s ease-out";
+    spark.style.zIndex="10000";
     document.body.appendChild(spark);
 
-    const x=(Math.random()-0.5)*800;
-    const y=(Math.random()-0.5)*600;
+    const x=(Math.random()-0.5)*700;
+    const y=(Math.random()-0.5)*500;
 
     setTimeout(()=>{
       spark.style.transform=`translate(${x}px,${y}px)`;
@@ -229,6 +231,7 @@ function celebrate(){
     setTimeout(()=>{ spark.remove(); },2000);
   }
 
+  // Show message
   setTimeout(()=>{
     fade.innerHTML=`
       <div style="
@@ -245,10 +248,15 @@ function celebrate(){
         Forever. Only You.
       </div>
     `;
-  },3000);
+  },2500);
+
+  // Redirect to epilogue page
+  setTimeout(()=>{
+    window.location.href="epilogue.html";
+  },6000);
 }
 
 </script>
 
 </body>
-    </html>
+</html>
