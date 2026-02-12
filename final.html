@@ -12,98 +12,15 @@ body{
   color:white;
   font-family:'Poppins', sans-serif;
   overflow:hidden;
-}
-
-/* LOCK SCREEN */
-#lockScreen{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:black;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-
-#lockScreen h1{
-  font-family:'Great Vibes',cursive;
-  font-size:55px;
-  color:#ff4d6d;
-  text-shadow:0 0 40px #ff4d6d;
-}
-
-input{
-  margin-top:25px;
-  padding:12px 20px;
-  font-size:18px;
-  border-radius:30px;
-  border:none;
-  text-align:center;
-}
-
-button{
-  margin-top:20px;
-  padding:12px 30px;
-  border:none;
-  border-radius:30px;
-  background:#ff4d6d;
-  color:white;
-  cursor:pointer;
-}
-
-#errorMsg{
-  margin-top:15px;
-  color:#ff4d6d;
-}
-
-/* MAIN CONTENT */
-#mainContent{
-  display:none;
-  height:100vh;
   position:relative;
 }
 
-.container{
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  z-index:2;
-  position:relative;
-}
-
-h2{
-  font-family:'Great Vibes',cursive;
-  font-size:85px;
-  color:#ff4d6d;
-  text-shadow:0 0 40px #ff4d6d;
-}
-
-#text{
-  margin-top:30px;
-  font-size:22px;
-  line-height:1.8;
-  max-width:85%;
-  white-space:pre-line;
-}
-
-#foreverBtn{
-  display:none;
-  margin-top:30px;
-  padding:18px 55px;
-  font-size:20px;
-  box-shadow:0 0 20px #ff4d6d;
-}
-
-/* WATERMARK */
+/* BIG WATERMARK TEXT */
 .watermark{
   position:fixed;
-  font-family:'Great Vibes',cursive;
-  font-size:110px;
-  color:rgba(255,77,109,0.05);
+  font-family:'Great Vibes', cursive;
+  font-size:120px;
+  color:rgba(255,77,109,0.06);
   white-space:nowrap;
   pointer-events:none;
   animation:moveWatermark 25s linear infinite;
@@ -114,108 +31,122 @@ h2{
   100%{transform:translateX(100%);}
 }
 
-/* FLOATING LOVE TEXT */
+/* MANY BACKGROUND LOVE TEXTS */
 .bgLove{
   position:fixed;
-  font-family:'Great Vibes',cursive;
-  font-size:55px;
-  color:rgba(255,77,109,0.07);
-  animation:floatUp 20s linear infinite;
+  font-family:'Great Vibes', cursive;
+  font-size:60px;
+  color:rgba(255,77,109,0.08);
+  animation:floatBg 20s linear infinite;
+  pointer-events:none;
 }
 
-@keyframes floatUp{
+@keyframes floatBg{
   0%{transform:translateY(100vh);}
   100%{transform:translateY(-100vh);}
 }
 
-/* HEARTS */
+.container{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  z-index:2;
+  position:relative;
+}
+
+h1{
+  font-family:'Great Vibes', cursive;
+  font-size:90px;
+  color:#ff4d6d;
+  text-shadow:0 0 40px #ff4d6d;
+  animation:zoomIn 3s ease-in-out;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(0.8); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+
+#text{
+  margin-top:30px;
+  font-size:22px;
+  line-height:1.8;
+  max-width:85%;
+  white-space:pre-line;
+}
+
+button{
+  margin-top:35px;
+  padding:18px 55px;
+  font-size:20px;
+  border:none;
+  border-radius:40px;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+  transition:0.4s;
+  box-shadow:0 0 20px #ff4d6d;
+  display:none;
+}
+
+button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 50px #ff4d6d;
+}
+
+/* Floating hearts */
 .heart{
   position:fixed;
   bottom:-10px;
   font-size:22px;
-  animation:rise 6s linear infinite;
+  color:#ff4d6d;
+  animation:floatUp 7s linear infinite;
 }
 
-@keyframes rise{
-  0%{transform:translateY(0); opacity:1;}
-  100%{transform:translateY(-100vh); opacity:0;}
+@keyframes floatUp{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-100vh);opacity:0;}
 }
 </style>
 </head>
 
 <body>
 
-<div id="lockScreen">
-  <h1>Enter Our Special Date ❤️</h1>
-  <input type="password" id="passwordInput" placeholder="DDMMYYYY">
-  <button onclick="checkPassword()">Unlock</button>
-  <div id="errorMsg"></div>
-</div>
-
-<div id="mainContent">
-
-<div class="watermark" style="top:20%;">Love You Sellam ❤️</div>
-<div class="watermark" style="top:60%;">Forever Together ❤️</div>
+<div class="watermark" style="top:15%;">Love You My Kundniiiii ❤️</div>
+<div class="watermark" style="top:55%;">Love You Sellameye ❤️</div>
 
 <div class="container">
-  <h2>Happy 2 Years ❤️</h2>
+  <h1>Happy 2 Years ❤️</h1>
   <div id="text"></div>
-  <button id="foreverBtn" onclick="celebrate()">Forever With You 💍</button>
-</div>
-
+  <button id="foreverBtn" onclick="celebrate()">
+    Forever With You 💍
+  </button>
 </div>
 
 <script>
 
-const correctPassword = "13022024";
-
-/* ENTER KEY SUPPORT */
-document.getElementById("passwordInput").addEventListener("keypress", function(e){
-  if(e.key === "Enter"){
-    checkPassword();
-  }
-});
-
-function checkPassword(){
-  let input=document.getElementById("passwordInput").value;
-  input=input.replace(/\D/g,"");
-
-  if(input===correctPassword){
-    document.getElementById("lockScreen").style.display="none";
-    document.getElementById("mainContent").style.display="block";
-    startEffects();
-    typeWriter();
-  }else{
-    document.getElementById("errorMsg").innerHTML="Wrong date 👀 Try again.";
-  }
+/* MANY LOVE BACKGROUND TEXTS */
+for(let i=0;i<15;i++){
+  const bg=document.createElement("div");
+  bg.classList.add("bgLove");
+  bg.innerHTML="Love You Sellam ❤️";
+  bg.style.left=Math.random()*100+"vw";
+  bg.style.animationDuration=(15+Math.random()*10)+"s";
+  document.body.appendChild(bg);
 }
 
-/* START BACKGROUND EFFECTS AFTER UNLOCK */
-function startEffects(){
-
-  // floating love texts
-  for(let i=0;i<12;i++){
-    const love=document.createElement("div");
-    love.classList.add("bgLove");
-    love.innerHTML="Love You Sellam ❤️";
-    love.style.left=Math.random()*100+"vw";
-    love.style.animationDuration=(15+Math.random()*10)+"s";
-    document.body.appendChild(love);
-  }
-
-  // floating hearts
-  setInterval(()=>{
-    const heart=document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML="❤️";
-    heart.style.left=Math.random()*100+"vw";
-    document.body.appendChild(heart);
-    setTimeout(()=>{heart.remove();},6000);
-  },600);
-}
-
-/* TYPEWRITER */
+/* TYPEWRITER MESSAGE */
 const message = `Happy 2 Year Anniversary, my Sellam ❤️
+
+From January 19, 2024...
+To February 13, 2024...
+And every single day after that...
+
+We weren't perfect.
+But we were real.
 
 Sellamye love youu dyy veronum cheyann pateelaa athanee ingnelaaaaa kettaaa 😭❤️
 
@@ -232,20 +163,36 @@ Today.
 Tomorrow.
 Always. ❤️`;
 
-let i=0;
+let i = 0;
+const speed = 35;
+const textDiv = document.getElementById("text");
 
-function typeWriter(){
-  if(i<message.length){
-    document.getElementById("text").innerHTML+=message.charAt(i);
+function typeWriter() {
+  if (i < message.length) {
+    textDiv.innerHTML += message.charAt(i);
     i++;
-    setTimeout(typeWriter,35);
-  }else{
-    document.getElementById("foreverBtn").style.display="inline-block";
+    setTimeout(typeWriter, speed);
+  } else {
+    document.getElementById("foreverBtn").style.display = "inline-block";
   }
 }
 
-/* CINEMATIC END */
+typeWriter();
+
+/* Floating hearts */
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove();},7000);
+}
+setInterval(createHeart,600);
+
+/* CINEMATIC ENDING */
 function celebrate(){
+
   const fade=document.createElement("div");
   fade.style.position="fixed";
   fade.style.top="0";
@@ -253,15 +200,52 @@ function celebrate(){
   fade.style.width="100%";
   fade.style.height="100%";
   fade.style.background="black";
-  fade.style.display="flex";
-  fade.style.justifyContent="center";
-  fade.style.alignItems="center";
-  fade.style.fontFamily="'Great Vibes',cursive";
-  fade.style.fontSize="60px";
-  fade.style.color="#ff4d6d";
-  fade.style.textShadow="0 0 40px #ff4d6d";
-  fade.innerHTML="Forever. Only You ❤️";
+  fade.style.opacity="0";
+  fade.style.transition="3s";
+  fade.style.zIndex="9999";
   document.body.appendChild(fade);
+
+  setTimeout(()=>{ fade.style.opacity="1"; },100);
+
+  for(let i=0;i<150;i++){
+    const spark=document.createElement("div");
+    spark.innerHTML="❤️";
+    spark.style.position="fixed";
+    spark.style.left="50%";
+    spark.style.top="50%";
+    spark.style.fontSize="20px";
+    spark.style.transform=`translate(-50%,-50%)`;
+    spark.style.transition="2s ease-out";
+    document.body.appendChild(spark);
+
+    const x=(Math.random()-0.5)*800;
+    const y=(Math.random()-0.5)*600;
+
+    setTimeout(()=>{
+      spark.style.transform=`translate(${x}px,${y}px)`;
+      spark.style.opacity="0";
+    },50);
+
+    setTimeout(()=>{ spark.remove(); },2000);
+  }
+
+  setTimeout(()=>{
+    fade.innerHTML=`
+      <div style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100%;
+        text-align:center;
+        font-family:'Great Vibes',cursive;
+        font-size:70px;
+        color:#ff4d6d;
+        text-shadow:0 0 50px #ff4d6d;">
+        Happy 2 Years My Sellam ❤️<br><br>
+        Forever. Only You.
+      </div>
+    `;
+  },3000);
 }
 
 </script>
