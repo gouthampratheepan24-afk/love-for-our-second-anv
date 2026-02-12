@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Heart ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  background:black;
+  color:white;
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+}
+
+.container{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+  animation:fadeIn 2s ease-in-out;
+}
+
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:90px;
+  color:#ff4d6d;
+  text-shadow:0 0 50px #ff4d6d;
+}
+
+p{
+  margin-top:30px;
+  font-size:22px;
+  line-height:1.9;
+  max-width:900px;
+  white-space:pre-line;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+/* Floating hearts */
+.heart{
+  position:fixed;
+  bottom:-10px;
+  font-size:22px;
+  animation:rise 6s linear infinite;
+}
+
+@keyframes rise{
+  0%{transform:translateY(0); opacity:1;}
+  100%{transform:translateY(-100vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>My Heart ❤️</h1>
+
+  <p>
+Pinja sellamm…
+
+Ee anniversary kooda kazhiyumbol,
+nammude college kazhiyum…
+Pineed nammal oro karyngalil aakum sellamm.
+
+Enthoke vannalum,
+aroke vannalum,
+nanum neeyum strong ayrknm.
+
+Nammal chilapo long distance ayekam…
+Ennalum nammal thne full effort itt
+loyal ayi nikanam sellamm.
+
+Nammak nammude relationship success akanam sellam.
+Enik nine kettanam sellam.
+
+Iniyum oru 100 anniversary
+ninta kooda enik agoshikanm sellamm.
+
+Pinjaaa potaaaa kanammm ❤️💋
+
+Love you sellamm 🧿❤️
+  </p>
+</div>
+
+<script>
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove();},6000);
+},600);
+</script>
+
+</body>
+</html>
